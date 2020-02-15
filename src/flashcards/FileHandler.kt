@@ -5,7 +5,7 @@ import kotlin.text.StringBuilder
 
 class FileHandler {
 
-    private val logger = Logger.getLogger()
+    private val logger = Logger
 
     fun importCards(cards: MutableList<Card>, file: File) {
         if (!file.exists()) {
@@ -14,7 +14,7 @@ class FileHandler {
         }
         val content = file.readLines()
         for (i in content.indices step 3) {
-            cards.removeIf { card ->  card.term == content[0] }
+            cards.removeIf { it.term == content[0] }
             cards.add(Card(content[i], content[i + 1], content[i + 2].toInt()))
         }
         logger.logAndPrintln("${content.size / 3} cards have been loaded.\n")

@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
             "-export" -> exFile = File(args[i+1])
         }
     }
-    val logger = Logger.getLogger()
+    val logger = Logger
     var action = ""
     while (action != "exit") {
         logger.logAndPrintln("Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats): ")

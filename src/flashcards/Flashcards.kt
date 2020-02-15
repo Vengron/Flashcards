@@ -6,7 +6,7 @@ import kotlin.random.Random
 class Flashcards {
 
     var cards = mutableListOf<Card>()
-    private val logger = Logger.getLogger()
+    private val logger = Logger
 
     fun addCard() {
         logger.logAndPrintln("The card:")
